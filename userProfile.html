@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MyPetakom | Edit Profile (Student)</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="userProfile.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-paw"></i>
+            <div class="app-name">UMPSA On Clubs<br><span style="font-size: 10px; opacity: 0.7;">Student Portal</span></div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li class="active"><a href="#"><i class="fas fa-user-edit"></i> Profile</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Event</a></li>
+                <li><a href="#"><i class="fas fa-star"></i> Merit</a></li>
+                <li><a href="#"><i class="fas fa-id-card"></i> Membership</a></li>
+            </ul>
+        </div>
+        <div class="nav-extra">
+            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT: EDIT PROFILE with EXACT 5 COLUMNS -->
+    <div class="main-content">
+        <div class="profile-card">
+            <div class="profile-header">
+                <h1>
+                    Edit Profile 
+                    <span class="badge-student">(Student)</span>
+                </h1>
+                <p class="sub-header">UMPSA On Clubs · Update your personal information</p>
+            </div>
+
+            <div class="profile-body">
+                <form id="editProfileForm">
+                    <!-- ROW 1: 5 COLUMNS - Full Name, Email, Student ID, Phone Number, Program of Study -->
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" value="AHMAD FIRDAUS">
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" value="ahmad.firdaus@student.edu">
+                        </div>
+                        <div class="form-field">
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId" name="studentId" value="CB23083">
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" value="0123456789">
+                        </div>
+                        <div class="form-field">
+                            <label for="program">Program of Study</label>
+                            <input type="text" id="program" name="program" value="Software Engineering">
+                        </div>
+                    </div>
+
+                    <!-- ROW 2: 5 COLUMNS - Current Semester, Year of Study, Gender, (empty placeholders to maintain 5 columns) -->
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="semester">Current Semester</label>
+                            <input type="text" id="semester" name="semester" value="Semester 4">
+                        </div>
+                        <div class="form-field">
+                            <label for="yearOfStudy">Year of Study</label>
+                            <select id="yearOfStudy" name="yearOfStudy">
+                                <option value="Year 1">Year 1</option>
+                                <option value="Year 2">Year 2</option>
+                                <option value="Year 3">Year 3</option>
+                                <option value="Year 4" selected>Year 4</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="Female" selected>Male</option>
+                                <option value="Male">Male</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <!-- Empty divs to maintain 5-column layout (keeps grid even) -->
+                        <div class="form-field empty-field"></div>
+                        <div class="form-field empty-field"></div>
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Changes</button>
+                        <button type="button" class="btn btn-secondary" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+                    </div>
+
+                    <div id="formFeedback" class="feedback-message"></div>
+                </form>
+            </div>
+
+            <div class="profile-footer">
+                <i class="fas fa-user-check"></i> User Profile Management 
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

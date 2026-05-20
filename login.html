@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>UMPSA Pekan Campus | Secure Login Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Header with #OD7377 colour (interpreted as #0D7377) -->
+        <div class="login-header">
+            <h1>
+                <i class="fas fa-shield-alt"></i> 
+                FK Student Club & Event Management System
+                Welcome! 
+            </h1>
+            <p>Please Log In to continue</p>
+            <div class="secure-badge">
+                <i class="fas fa-lock"></i> Secure Portal Access
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form">
+            <!-- User Role Dropdown -->
+            <div class="input-group">
+                <label><i class="fas fa-user-tag"></i> User Role</label>
+                <div class="input-field">
+                    <i class="fas fa-badge-check input-icon"></i>
+                    <select id="userRole" name="userRole">
+                        <option value="student">Student</option>
+                        <option value="staff">Staff / Faculty</option>
+                        <option value="admin">Administrator</option>
+                        <option value="alumni">Alumni</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Username Field -->
+            <div class="input-group">
+                <label><i class="fas fa-user"></i> Username</label>
+                <div class="input-field">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="text" id="username" placeholder="Enter your username" autocomplete="username">
+                </div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="input-group">
+                <label><i class="fas fa-key"></i> Password</label>
+                <div class="input-field">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+                </div>
+            </div>
+
+            <!-- Remember Me & Forgot Password Row -->
+            <div class="options-row">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="rememberMe"> 
+                    <span>Remember Me</span>
+                </label>
+                <a href="#" class="forgot-link" id="forgotPasswordLink">Forgot Password?</a>
+            </div>
+
+            <!-- LOGIN Button -->
+            <button class="login-btn" id="loginBtn">
+                <span>LOGIN</span> <i class="fas fa-arrow-right"></i>
+            </button>
+
+            <!-- Campus Portal Info -->
+            <div class="campus-footer">
+                <p><i class="fas fa-map-marker-alt"></i> UMPSA Pekan Campus</p>
+                <p class="secure-text">Secure Login Portal</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple demo interaction script (non-intrusive) -->
+    <script>
+        (function() {
+            const loginButton = document.getElementById('loginBtn');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const userRoleSelect = document.getElementById('userRole');
+            const rememberCheck = document.getElementById('rememberMe');
+
+            // Handle login click with a simple validation alert
+            loginButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const username = usernameInput.value.trim();
+                const password = passwordInput.value.trim();
+                const role = userRoleSelect.options[userRoleSelect.selectedIndex]?.text || 'User';
+                
+                if (!username) {
+                    alert('⚠️ Please enter your username.');
+                    usernameInput.focus();
+                    return;
+                }
+                if (!password) {
+                    alert('⚠️ Please enter your password.');
+                    passwordInput.focus();
+                    return;
+                }
+                
+                // For demo purposes only – show a success message (simulate login)
+                alert(`✅ Welcome ${role}: ${username}\n🔐 Secure login simulation.\n(No actual authentication performed.)`);
+                
+                // Optional: if "Remember Me" is checked, we could store info, but just visual demo.
+                if (rememberCheck.checked) {
+                    console.log('Remember Me selected — session persistence would be handled.');
+                }
+            });
+            
+            // Forgot password demo interaction
+            const forgotLink = document.getElementById('forgotPasswordLink');
+            forgotLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('📧 Password reset link will be sent to your registered email.\nPlease contact IT support if you need assistance.');
+            });
+            
+            // Additional: subtle effect on Enter key press
+            const inputs = [usernameInput, passwordInput];
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        loginButton.click();
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

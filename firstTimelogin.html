@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Time Login - FK Student Club</title>
+    <link rel="stylesheet" href="firstTimelogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo">
+                    <i class="fas fa-users"></i>
+                    <h1>FK Student Club</h1>
+                </div>
+                <p class="subtitle">Event Management System</p>
+                <div class="welcome-text">
+                    <i class="fas fa-hand-wave"></i>
+                    <span>Welcome! Please complete your profile</span>
+                </div>
+            </div>
+
+            <form class="login-form" id="firstTimeForm">
+                <!-- Full Name -->
+                <div class="input-group">
+                    <label for="fullname">
+                        <i class="fas fa-user"></i>
+                        Full Name
+                    </label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="input-group">
+                    <label for="phone">
+                        <i class="fas fa-phone"></i>
+                        Phone Number
+                    </label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <!-- New Password -->
+                <div class="input-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        New Password
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="Create a new password" required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <label for="confirm_password">
+                        <i class="fas fa-check-circle"></i>
+                        Confirm Password
+                    </label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+                </div>
+
+                <!-- User Type -->
+                <div class="input-group">
+                    <label for="user_type">
+                        <i class="fas fa-user-tag"></i>
+                        User Type
+                    </label>
+                    <select id="user_type" name="user_type" required>
+                        <option value="" disabled selected>Select Type</option>
+                        <option value="student">Student</option>
+                        <option value="admin">Administrator</option>
+                        <option value="committee">Club Committee</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span>REGISTER</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <div class="back-link">
+                    <a href="login.html">
+                        <i class="fas fa-arrow-left"></i> Back to Login
+                    </a>
+                </div>
+            </form>
+
+            <div class="login-footer">
+                <p><i class="fas fa-map-marker-alt"></i> UMPSA Pekan Campus</p>
+                <p class="secure-text"><i class="fas fa-shield-alt"></i> SECURE REGISTRATION PORTAL</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('firstTimeForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirm = document.getElementById('confirm_password').value;
+            
+            if (password !== confirm) {
+                e.preventDefault();
+                alert('Passwords do not match. Please try again.');
+            } else if (password.length < 6) {
+                e.preventDefault();
+                alert('Password must be at least 6 characters long.');
+            }
+        });
+    </script>
+</body>
+</html>

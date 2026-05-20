@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Application - MyPetakom</title>
+    <link rel="stylesheet" href="membership.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar__brand">
+                <div class="sidebar__logo">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <span class="sidebar__brand-name">UMPSA On Clubs</span>
+            </div>
+
+            <nav class="sidebar__nav">
+                <div class="sidebar__section-label">MAIN</div>
+                
+                <a href="#" class="sidebar__item active">
+                    <span class="sidebar__icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span>Dashboard</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-user-circle"></i></span>
+                    <span>Profile</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-calendar-alt"></i></span>
+                    <span>Event</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-star"></i></span>
+                    <span>Merit</span>
+                </a>
+                
+                <a href="membership_application.html" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-id-card"></i></span>
+                    <span>Membership</span>
+                </a>
+            </nav>
+
+            <div class="sidebar__footer">
+                <a href="#" class="sidebar__logout">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Student Greeting -->
+            <div class="student-greeting">
+                <div class="greeting-text">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>HI Student: <strong>AHMAD FIRDAUS</strong></span>
+                </div>
+            </div>
+
+            <div class="membership-container">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1><i class="fas fa-id-card"></i> Membership Application</h1>
+                    <p>Apply for club membership and manage your current memberships</p>
+                </div>
+
+                <!-- Two Column Layout -->
+                <div class="membership-layout">
+                    <!-- Left Column - Application Form -->
+                    <div class="application-form-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-pen-alt"></i> Apply Membership</h2>
+                        </div>
+
+                        <form class="application-form" id="applicationForm">
+                            <div class="form-group">
+                                <label for="full_name">Student Full Name</label>
+                                <input type="text" id="full_name" name="full_name" placeholder="e.g., Sarah" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_id">Student ID</label>
+                                <input type="text" id="student_id" name="student_id" placeholder="e.g., CB24063" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="club">Select Club</label>
+                                <select id="club" name="club" required>
+                                    <option value="" disabled selected>-- Select a Club --</option>
+                                    <option value="Computer Science Club">Computer Science Club</option>
+                                    <option value="Robotics Club">Robotics Club</option>
+                                    <option value="Photography Club">Photography Club</option>
+                                    <option value="Debate Society">Debate Society</option>
+                                    <option value="AI Innovations">AI Innovations</option>
+                                    <option value="Outdoor Adventure">Outdoor Adventure</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group required-doc">
+                                <label>Required Document (PDF)</label>
+                                <div class="file-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Upload Student Card (Valid PDF Only, max 5MB)</span>
+                                    <input type="file" id="document" accept=".pdf" required>
+                                </div>
+                                <small class="file-note"><i class="fas fa-info-circle"></i> Only PDF files up to 5MB allowed</small>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Submit Application
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right Column - Current Memberships Table -->
+                    <div class="memberships-table-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-list-alt"></i> My Current Memberships</h2>
+                        </div>
+
+                        <div class="table-container">
+                            <table class="memberships-table">
+                                <thead>
+                                    <tr>
+                                        <th>Club Name</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Computer Science Club</td>
+                                        <td><span class="status active">Active</span></td>
+                                        <td class="actions-cell">
+                                            <button class="action-view"><i class="fas fa-eye"></i> View</button>
+                                            <button class="action-renew"><i class="fas fa-sync-alt"></i> Renew</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robotics Club</td>
+                                        <td><span class="status active">Active</span></td>
+                                        <td class="actions-cell">
+                                            <button class="action-view"><i class="fas fa-eye"></i> View</button>
+                                            <button class="action-renew"><i class="fas fa-sync-alt"></i> Renew</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Photography Club</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                        <td class="actions-cell">
+                                            <button class="action-view"><i class="fas fa-eye"></i> View</button>
+                                            <button class="action-renew disabled" disabled><i class="fas fa-sync-alt"></i> Renew</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-note">
+                            <i class="fas fa-info-circle"></i> Pending applications are being reviewed by the administrator
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Form submission handling
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('full_name').value;
+            const club = document.getElementById('club').value;
+            const file = document.getElementById('document').files[0];
+            
+            if (!fullName || !club) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (!file) {
+                alert('Please upload your student card (PDF).');
+                return;
+            }
+            
+            if (file.type !== 'application/pdf') {
+                alert('Please upload a valid PDF file.');
+                return;
+            }
+            
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File size must be less than 5MB.');
+                return;
+            }
+            
+            alert(`Application submitted for ${club}!\nYou will receive a notification once approved.`);
+            this.reset();
+        });
+
+        // View button handlers
+        document.querySelectorAll('.action-view').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const clubName = row.cells[0].textContent;
+                alert(`Viewing details for ${clubName}`);
+            });
+        });
+
+        // Renew button handlers
+        document.querySelectorAll('.action-renew:not(.disabled)').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const clubName = row.cells[0].textContent;
+                if (confirm(`Are you sure you want to renew your membership for ${clubName}?`)) {
+                    alert(`Renewal request submitted for ${clubName}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

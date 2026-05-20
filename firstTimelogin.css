@@ -1,0 +1,227 @@
+/* first_time_login.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, rgba(13, 115, 119, 0.85), rgba(10, 92, 95, 0.9)), url('UMPSA\ Solar_0.jpg');
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Remove the ::before pattern if using your own image */
+body::before {
+    display: none;
+}
+.login-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.login-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 40px 32px;
+    transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Header Section */
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.logo i {
+    font-size: 36px;
+    color: #0d7377;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #1a2a3a;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    background: #e0f2f1;
+    padding: 10px 16px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #0d7377;
+}
+
+.welcome-text i {
+    font-size: 16px;
+}
+
+/* Form Inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2e3b4e;
+    margin-bottom: 8px;
+}
+
+.input-group label i {
+    color: #0d7377;
+    width: 16px;
+    font-size: 14px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e0e4e8;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #0d7377;
+    box-shadow: 0 0 0 3px rgba(13, 115, 119, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #a0aec0;
+}
+
+/* Register Button */
+.login-btn {
+    width: 100%;
+    background: #0d7377;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    margin-top: 24px;
+}
+
+.login-btn:hover {
+    background: #0a5c5f;
+    transform: translateX(3px);
+    gap: 12px;
+}
+
+.login-btn i {
+    font-size: 14px;
+}
+
+/* Back Link */
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #718096;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+    color: #0d7377;
+}
+
+/* Footer */
+.login-footer {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e4e8;
+    text-align: center;
+}
+
+.login-footer p {
+    font-size: 12px;
+    color: #718096;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.login-footer p i {
+    font-size: 11px;
+}
+
+.secure-text {
+    margin-top: 8px;
+    font-weight: 600;
+    color: #0d7377 !important;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+    
+    .logo h1 {
+        font-size: 20px;
+    }
+    
+    .logo i {
+        font-size: 28px;
+    }
+}

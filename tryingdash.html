@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Club Dashboard</title>
+    <link rel="stylesheet" href="tryingdash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- NEW SIDEBAR (from your example) -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Brand -->
+            <div class="sidebar__brand">
+                <div class="sidebar__logo">
+                    <i class="fas fa-users"></i>
+                </div>
+                <span class="sidebar__brand-name">UMPSA On Clubs</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar__nav" id="sidebar-nav">
+                <div class="sidebar__section-label">MAIN</div>
+                
+                <a href="#" class="sidebar__item active">
+                    <span class="sidebar__icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span>Dashboard</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-search"></i></span>
+                    <span>Discover Clubs</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-comments"></i></span>
+                    <span>My Discussions</span>
+                </a>
+                
+                <!-- Event Dropdown Group -->
+                <div class="sidebar__group">
+                    <a href="#" class="sidebar__item" id="event-toggle">
+                        <span class="sidebar__icon"><i class="fas fa-calendar-alt"></i></span>
+                        <span>Event</span>
+                        <span class="sidebar__arrow">▼</span>
+                    </a>
+                    <div class="sidebar__sub" id="event-sub">
+                        <a href="#" class="sidebar__subitem">
+                            <span class="sidebar__subicon"><i class="fas fa-plus"></i></span>
+                            Create Event
+                        </a>
+                        <a href="#" class="sidebar__subitem">
+                            <span class="sidebar__subicon"><i class="fas fa-edit"></i></span>
+                            Event Registration
+                        </a>
+                        <a href="#" class="sidebar__subitem">
+                            <span class="sidebar__subicon"><i class="fas fa-users"></i></span>
+                            Participant List
+                        </a>
+                        <a href="#" class="sidebar__subitem">
+                            <span class="sidebar__subicon"><i class="fas fa-chart-bar"></i></span>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-id-card"></i></span>
+                    <span>Membership</span>
+                </a>
+                
+                <!-- Merit Dropdown Group -->
+                <div class="sidebar__group">
+                    <a href="#" class="sidebar__item" id="merit-toggle">
+                        <span class="sidebar__icon"><i class="fas fa-star"></i></span>
+                        <span>Merit</span>
+                        <span class="sidebar__arrow">▼</span>
+                    </a>
+                    <div class="sidebar__sub" id="merit-sub">
+                        <a href="#" class="sidebar__subitem">
+                            <span class="sidebar__subicon"><i class="fas fa-file-alt"></i></span>
+                            Apply Merit
+                        </a>
+                        <a href="#" class="sidebar__subitem">
+                            <span class="sidebar__subicon"><i class="fas fa-chart-line"></i></span>
+                            Merit Records
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="sidebar__section-label">ACCOUNT</div>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-cog"></i></span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <!-- Logout -->
+            <div class="sidebar__footer">
+                <a href="#" class="sidebar__logout">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="page-title-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for clubs or events...">
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </header>
+
+            <!-- Student Profile Section (ABOVE DASHBOARD) -->
+            <div class="student-profile-header">
+                <div class="student-profile-info">
+                    <img src="images.jpg" alt="Student Profile" class="student-avatar-large">
+                    <div class="student-details">
+                        <h2 class="student-full-name">Ahmad Firdaus</h2>
+                        <span class="student-role-badge">Student</span>
+                        <div class="student-contact">
+                            <span><i class="fas fa-envelope"></i> ahmad.firdaus@student.edu</span>
+                            <span><i class="fas fa-phone"></i> +60 12 345 6789</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="student-actions">
+                    <button class="edit-profile-btn"><i class="fas fa-edit"></i> Edit Profile</button>
+                </div>
+            </div>
+
+            <div class="dashboard-widgets">
+                <div class="widget upcoming-events">
+                    <div class="widget-header">
+                        <h2>Upcoming Events</h2>
+                        <span class="club-label">AI Innovations</span>
+                    </div>
+                    <div class="event-details">
+                        <i class="fas fa-calendar"></i>
+                        <span>Sat, Nov 2, 2:00 PM</span>
+                    </div>
+                    <div class="event-details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tech Hall 101</span>
+                    </div>
+                </div>
+                <div class="widget-small club-count">
+                    <h2>5 Active Clubs</h2>
+                    <span class="club-list">Photography, Debate, AI...</span>
+                </div>
+            </div>
+
+            <div class="club-search">
+                <h3>Explore New Clubs</h3>
+                <div class="filters">
+                    <input type="text" placeholder="Search clubs by name or interest...">
+                    <select>
+                        <option>All Categories</option>
+                        <option>Technology</option>
+                        <option>Arts & Culture</option>
+                        <option>Sports</option>
+                    </select>
+                    <button>Search</button>
+                </div>
+            </div>
+
+            <section class="my-clubs-section">
+                <h2>My Clubs</h2>
+                <div class="club-grid">
+                    <div class="club-card">
+                        <i class="fas fa-robot club-icon"></i>
+                        <h3>AI Innovations</h3>
+                        <p class="role">Committee Member</p>
+                    </div>
+                    <div class="club-card">
+                        <i class="fas fa-camera club-icon"></i>
+                        <h3>Photography Club</h3>
+                        <p class="role">Member</p>
+                    </div>
+                    <div class="club-card">
+                        <i class="fas fa-comments club-icon"></i>
+                        <h3>Debate Society</h3>
+                        <p class="role">Member</p>
+                    </div>
+                    <div class="club-card">
+                        <i class="fas fa-hiking club-icon"></i>
+                        <h3>Outdoor Adventure</h3>
+                        <p class="role">Member</p>
+                    </div>
+                    <div class="club-card">
+                        <i class="fas fa-book club-icon"></i>
+                        <h3>Book Club</h3>
+                        <p class="role">Member</p>
+                    </div>
+                    <div class="club-card explore-more">
+                        <i class="fas fa-plus"></i>
+                        <span>Explore Clubs</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript for Dropdown Toggle -->
+    <script>
+        // Toggle Event submenu
+        const eventToggle = document.getElementById('event-toggle');
+        const eventSub = document.getElementById('event-sub');
+        
+        if (eventToggle) {
+            eventToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                eventSub.classList.toggle('open');
+                const arrow = this.querySelector('.sidebar__arrow');
+                if (arrow) arrow.classList.toggle('open');
+            });
+        }
+        
+        // Toggle Merit submenu
+        const meritToggle = document.getElementById('merit-toggle');
+        const meritSub = document.getElementById('merit-sub');
+        
+        if (meritToggle) {
+            meritToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                meritSub.classList.toggle('open');
+                const arrow = this.querySelector('.sidebar__arrow');
+                if (arrow) arrow.classList.toggle('open');
+            });
+        }
+
+        // Set active on click for sidebar items
+        document.querySelectorAll('.sidebar__item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Don't remove active if it's a dropdown toggle
+                if (!this.id || (this.id !== 'event-toggle' && this.id !== 'merit-toggle')) {
+                    document.querySelectorAll('.sidebar__item').forEach(i => {
+                        i.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

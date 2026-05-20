@@ -1,0 +1,343 @@
+/* -------------------------------
+   GLOBAL RESET & BASE 
+-------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('UMPSA\ Solar_0.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+
+    /* Centering styles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+/* Overlay to fade backgrounf */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.35); /* adjust opacity here */
+    z-index: -1; /* keeps overlay behind the login card */
+}
+
+/* -------------------------------
+   LOGIN CARD CONTAINER
+-------------------------------- */
+/* Make the login card larger */
+.login-container {
+    max-width: 700px;   /* wider card for desktop */
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25),
+                0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.
+/* Increase padding inside */
+.login-form {
+    padding: 3rem; /* more breathing room */
+}
+
+/* Larger header text */
+.login-header h1 {
+    font-size: 2.4rem;   /* bigger title */
+}
+
+.login-header p {
+    font-size: 1.1rem;   /* bigger subtitle */
+}
+
+/* Larger labels and inputs */
+.input-group label {
+    font-size: 1rem;
+}
+
+.input-field input,
+.input-field select {
+    font-size: 1.1rem;
+    padding: 1.1rem 1rem 1.1rem 2.7rem;
+}
+
+/* Bigger button */
+.login-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+}
+/* -------------------------------
+   HEADER STYLES
+   Colour #OD7377 interpreted as #0D7377 (rich teal)
+-------------------------------- */
+.login-header {
+    background: #0D7377;
+    padding: 1.8rem 2rem 1.6rem 2rem;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.login-header h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: -0.3px;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.login-header h1 i {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.login-header p {
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 6px;
+}
+
+.secure-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    border-radius: 40px;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+/* -------------------------------
+   FORM AREA
+-------------------------------- */
+.login-form {
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+/* Input group styling */
+.input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e2a3e;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.input-group label i {
+    color: #0D7377;
+    width: 20px;
+    font-size: 0.9rem;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field i.input-icon {
+    position: absolute;
+    left: 15px;
+    color: #8a9bb0;
+    font-size: 1rem;
+    transition: color 0.2s;
+    pointer-events: none;
+}
+
+.input-field input,
+.input-field select {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 2.7rem;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    background: #fefefe;
+    transition: all 0.2s ease;
+    outline: none;
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.input-field select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%234b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+    border-color: #0D7377;
+    box-shadow: 0 0 0 3px rgba(13, 115, 119, 0.2);
+    background: white;
+}
+
+.input-field input:focus+.input-icon,
+.input-field select:focus~.input-icon {
+    color: #0D7377;
+}
+
+/* Options row: Remember Me & Forgot Password */
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 1.8rem 0;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #334155;
+    font-weight: 500;
+}
+
+.checkbox-label input {
+    width: 18px;
+    height: 18px;
+    accent-color: #0D7377;
+    cursor: pointer;
+    margin: 0;
+}
+
+.forgot-link {
+    color: #0D7377;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+    font-size: 0.85rem;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+    color: #095a5e;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    width: 100%;
+    background: #0D7377;
+    border: none;
+    border-radius: 40px;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 8px rgba(13, 115, 119, 0.2);
+    margin-bottom: 1.2rem;
+}
+
+.login-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.login-btn:hover {
+    background: #095a5e;
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(13, 115, 119, 0.2);
+}
+
+.login-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Campus footer info */
+.campus-footer {
+    text-align: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid #edf2f7;
+    margin-top: 0.25rem;
+}
+
+.campus-footer p {
+    font-size: 0.8rem;
+    color: #4b5565;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.campus-footer i {
+    color: #0D7377;
+    font-size: 0.75rem;
+}
+
+.secure-text {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    background: #f1f5f9;
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 50px;
+    margin-top: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        max-width: 95%;
+    }
+    
+    .login-form {
+        padding: 1.5rem;
+    }
+    
+    .login-header {
+        padding: 1.4rem 1rem;
+    }
+    
+    .login-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .options-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

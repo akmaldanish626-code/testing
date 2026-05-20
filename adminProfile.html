@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile Settings - UMPSA On Clubs</title>
+    <link rel="stylesheet" href="adminProfile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar - ADMINISTRATOR VERSION -->
+        <aside class="sidebar">
+            <div class="sidebar__brand">
+                <div class="sidebar__logo">
+                    <i class="fas fa-users"></i>
+                </div>
+                <span class="sidebar__brand-name">UMPSA On Clubs</span>
+            </div>
+
+            <nav class="sidebar__nav">
+                <div class="sidebar__section-label">MAIN</div>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span>Dashboard</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-users-cog"></i></span>
+                    <span>Manage Users</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-flag-checkered"></i></span>
+                    <span>Manage Clubs</span>
+                </a>
+                
+                <a href="membership_admin.html" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-id-card"></i></span>
+                    <span>Membership</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-calendar-alt"></i></span>
+                    <span>Manage Events</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-chart-line"></i></span>
+                    <span>Reports</span>
+                </a>
+                
+                <div class="sidebar__section-label">ACCOUNT</div>
+                
+                <a href="admin_profile.html" class="sidebar__item active">
+                    <span class="sidebar__icon"><i class="fas fa-user-shield"></i></span>
+                    <span>Profile Settings</span>
+                </a>
+                
+                <a href="#" class="sidebar__item">
+                    <span class="sidebar__icon"><i class="fas fa-cog"></i></span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar__footer">
+                <a href="login.html" class="sidebar__logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="profile-container">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1><i class="fas fa-user-shield"></i> Admin Profile Settings</h1>
+                    <p>Manage your administrator profile information</p>
+                </div>
+
+                <!-- Two Column Layout -->
+                <div class="profile-layout">
+                    <!-- Left Column - Profile Overview -->
+                    <div class="profile-overview">
+                        <div class="section-header">
+                            <h2><i class="fas fa-id-card"></i> Profile Overview</h2>
+                        </div>
+
+                        <!-- Avatar Section -->
+                        <div class="avatar-section">
+                            <div class="avatar-wrapper">
+                                <img src="images.jpg" alt="Admin Avatar" class="admin-avatar">
+                                <button class="change-avatar-btn"><i class="fas fa-camera"></i></button>
+                            </div>
+                            <div class="admin-role-badge">
+                                <i class="fas fa-shield-alt"></i> Administrator
+                            </div>
+                        </div>
+
+                        <!-- Profile Info Fields (View Only) -->
+                        <div class="info-field">
+                            <label><i class="fas fa-user"></i> Name</label>
+                            <div class="field-value">
+                                <span>Alyssa Jane</span>
+                                <span class="view-only-badge"><i class="fas fa-lock"></i> View-only</span>
+                            </div>
+                        </div>
+
+                        <div class="info-field">
+                            <label><i class="fas fa-envelope"></i> Email</label>
+                            <div class="field-value">
+                                <span>alyssa.jane@university.edu</span>
+                                <span class="view-only-badge"><i class="fas fa-lock"></i> View-only</span>
+                            </div>
+                        </div>
+
+                        <div class="info-field">
+                            <label><i class="fas fa-phone"></i> Office Phone</label>
+                            <div class="field-value">
+                                <span>+60 9-424-6078</span>
+                                <span class="view-only-badge"><i class="fas fa-lock"></i> View-only</span>
+                            </div>
+                        </div>
+
+                        <div class="info-field">
+                            <label><i class="fas fa-user-tag"></i> Role</label>
+                            <div class="field-value">
+                                <span>Club Administrator</span>
+                                <span class="view-only-badge"><i class="fas fa-lock"></i> View-only</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Account Details -->
+                    <div class="account-details">
+                        <div class="section-header">
+                            <h2><i class="fas fa-address-card"></i> Account Details</h2>
+                        </div>
+
+                        <form class="profile-form" id="profileForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" value="Sarah Jenkins" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" value="alyssajane" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" value="alyssa.jane@university.edu" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_id">User ID</label>
+                                <input type="text" id="user_id" name="user_id" value="A100" readonly>
+                                <small class="readonly-note"><i class="fas fa-info-circle"></i> User ID cannot be changed</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="office_phone">Office Phone</label>
+                                <input type="tel" id="office_phone" name="office_phone" value="+60 9-424-6078" required>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="update-btn">
+                                    <i class="fas fa-save"></i> Update Profile
+                                </button>
+                                <button type="reset" class="cancel-btn">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Change Password Section -->
+                        <div class="change-password-section">
+                            <h3><i class="fas fa-key"></i> Change Password</h3>
+                            <div class="password-form">
+                                <div class="form-group">
+                                    <label for="current_password">Current Password</label>
+                                    <input type="password" id="current_password" placeholder="Enter current password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="new_password">New Password</label>
+                                    <input type="password" id="new_password" placeholder="Enter new password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm_password">Confirm Password</label>
+                                    <input type="password" id="confirm_password" placeholder="Confirm new password">
+                                </div>
+                                <button type="button" class="change-password-btn">
+                                    <i class="fas fa-sync-alt"></i> Change Password
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Update Profile Form Submission
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Profile updated successfully!');
+        });
+
+        // Cancel Button
+        document.querySelector('.cancel-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('Are you sure you want to discard all changes?')) {
+                document.getElementById('profileForm').reset();
+                alert('Changes discarded.');
+            }
+        });
+
+        // Change Password
+        document.querySelector('.change-password-btn').addEventListener('click', function() {
+            const current = document.getElementById('current_password').value;
+            const newPass = document.getElementById('new_password').value;
+            const confirm = document.getElementById('confirm_password').value;
+
+            if (!current || !newPass || !confirm) {
+                alert('Please fill in all password fields.');
+                return;
+            }
+
+            if (newPass !== confirm) {
+                alert('New password and confirm password do not match.');
+                return;
+            }
+
+            if (newPass.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return;
+            }
+
+            alert('Password changed successfully!');
+            document.getElementById('current_password').value = '';
+            document.getElementById('new_password').value = '';
+            document.getElementById('confirm_password').value = '';
+        });
+
+        // Change Avatar
+        document.querySelector('.change-avatar-btn').addEventListener('click', function() {
+            alert('Change avatar functionality will be available soon.');
+        });
+    </script>
+</body>
+</html>
