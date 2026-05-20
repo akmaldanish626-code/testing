@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Management</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>FK Clubs</h2>
+
+    <a onclick="showPage('dashboard')">🏠 Dashboard</a>
+    <a onclick="showPage('manageClub')">⚙️ Manage Club Information</a>
+    <a onclick="showPage('committee')">👥 Manage Club Committees</a>
+    <a onclick="showPage('clubList')">📋 View Club List</a>
+    <button class="logout-btn" onclick="logout()">🚪 Log Out</button>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="topbar">
+    <span>Club Management System</span>
+    <div class="user-info">
+        <div class="user-text">
+            <span class="greeting">Hi Committee Members,</span>
+            <strong>Akmal Danish</strong>
+        </div>
+        <img src="profile.png" class="avatar">
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="page">
+    <h1>Administrator Dashboard</h1>
+
+    <div class="dashboard-list">
+        <div class="dashboard-box">
+            <h3>What clubs exist</h3>
+            <div class="club-grid">
+                <div class="club-item">
+                    <strong>Computer Club</strong>
+                    <span class="club-tag">Tech</span>
+                </div>
+                <div class="club-item">
+                    <strong>Multimedia Club</strong>
+                    <span class="club-tag">Creative</span>
+                </div>
+                <div class="club-item">
+                    <strong>CYCBOC 2026</strong>
+                    <span class="club-tag">Innovation</span>
+                </div>
+                <div class="club-item">
+                    <strong>UMPSA INOVATECH</strong>
+                    <span class="club-tag">Engineering</span>
+                </div>
+                <div class="club-item">
+                    <strong>PutraHack 2026</strong>
+                    <span class="club-tag">Hackathon</span>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-box">
+            <h3>Active clubs</h3>
+            <p>Computer Club, Multimedia Club, UMPSA INOVATECH, PutraHack 2026</p>
+        </div>
+        <div class="dashboard-box">
+            <h3>Club totals</h3>
+            <p>Total Clubs: <strong>5</strong></p>
+            <p>Active Clubs: <strong>4</strong></p>
+        </div>
+        <div class="dashboard-box">
+            <h3>Club members</h3>
+            <p>Students: <strong>200</strong></p>
+            <p>Members: <strong>150</strong></p>
+        </div>
+    </div>
+
+    <div class="dashboard-box" style="margin-top:20px;">
+        <h3>Club list</h3>
+        <ul>
+            <li><span>Computer Club</span><span class="status-active">Active</span></li>
+            <li><span>Multimedia Club</span><span class="status-active">Active</span></li>
+            <li><span>CYCBOC 2026</span><span class="status-inactive">Inactive</span></li>
+            <li><span>UMPSA INOVATECH</span><span class="status-active">Active</span></li>
+            <li><span>PutraHack 2026</span><span class="status-active">Active</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- MANAGE CLUB -->
+<div id="manageClub" class="page hidden">
+    <h1>Manage Club Information</h1>
+
+    <div class="card">
+        <h3>Create / Update Club</h3>
+        <input placeholder="Club Name">
+        <input placeholder="Description">
+        <input placeholder="Advisor Name">
+        <input placeholder="Advisor Email">
+        <select>
+            <option>Active</option>
+            <option>Inactive</option>
+        </select>
+        <button>Save Club</button>
+    </div>
+
+    <div class="card">
+        <h3>Club List</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Advisor</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Computer Club</td>
+                <td>Dr Ahmad</td>
+                <td>Active</td>
+                <td><button>Edit</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- COMMITTEE -->
+<div id="committee" class="page hidden">
+    <h1>Manage Club Committees</h1>
+
+    <div class="card">
+        <h3>Assign Committee</h3>
+        <input placeholder="User ID">
+        <input placeholder="Club ID">
+
+        <select>
+            <option>President</option>
+            <option>Vice President</option>
+            <option>Secretary</option>
+            <option>Treasurer</option>
+        </select>
+
+        <button>Assign</button>
+    </div>
+
+    <div class="card">
+        <h3>Committee List</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Club</th>
+                <th>Position</th>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>Computer Club</td>
+                <td>President</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- CLUB LIST -->
+<div id="clubList" class="page hidden">
+    <h1>Club List</h1>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Computer Club</h3>
+            <p>Tech activities</p>
+            <p>Advisor: Dr Ahmad</p>
+        </div>
+
+        <div class="card">
+            <h3>Multimedia Club</h3>
+            <p>Design & media</p>
+            <p>Advisor: Dr Siti</p>
+        </div>
+
+        <div class="card">
+            <h3>CYCBOC 2026</h3>
+            <p>Gaming</p>
+            <p>Advisor: Dr. Azhar Harun</p>
+        </div>
+
+        <div class="card">
+            <h3>UMPSA INOVATECH</h3>
+            <p>Tech Activities</p>
+            <p>Advisor: Dr. Amalin</p>
+        </div>
+
+        <div class="card">
+            <h3>PutraHack 2026</h3>
+            <p>Hacking Competition</p>
+            <p>Advisor: Ts. Dr. Mohamad Akmal</p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<script>
+function showPage(pageId){
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(p => p.classList.add('hidden'));
+
+    document.getElementById(pageId).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
