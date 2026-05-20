@@ -218,6 +218,32 @@ body{
     margin-bottom:0;
 }
 
+.active-clubs-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:15px;
+}
+
+.active-club{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:140px;
+    padding:18px 20px;
+    border-radius:999px;
+    color:#ffffff;
+    font-weight:700;
+    font-size:0.95rem;
+    text-align:center;
+    box-shadow:0 12px 28px rgba(13, 115, 119, 0.16);
+}
+
+.active-club.badge-blue{background:#0D7377;}
+.active-club.badge-teal{background:#14a3a7;}
+.active-club.badge-purple{background:#7b61ff;}
+.active-club.badge-coral{background:#f25c54;}
+
 .club-grid{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
